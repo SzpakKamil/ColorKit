@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "2D166D15-E8A6-4D66-B438-869EFB85B533",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "ColorKitTests",
+        "name" : "ColorKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
