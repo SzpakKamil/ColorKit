@@ -114,7 +114,7 @@ jobs:
 
     - name: Build for watchOS
       run: |
-        xcodebuild -scheme ColorKit -destination 'platform=watchOS Simulator,name=Apple Watch Series 9 (45mm)' build test
+        xcodebuild -scheme ColorKit -destination 'platform=watchOS Simulator,name=Apple Watch Series 11 (46mm),OS=26.2' build test
 
   build-visionos:
     name: Build visionOS (Latest Swift)
@@ -125,4 +125,4 @@ jobs:
 
     - name: Build for visionOS
       run: |
-        xcodebuild -scheme ColorKit -destination 'platform=visionOS Simulator,name=Apple Vision Pro' build test
+        xcodebuild -scheme ColorKit -destination 'platform=visionOS Simulator,name=Apple Vision Pro,OS=26.2' build test
