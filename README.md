@@ -3,6 +3,9 @@
 ![Swift Version](https://img.shields.io/badge/Swift-5.9-teal.svg)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2013.0+%20|%20macOS%2010.15+%20|%20watchOS%206.0+%20|%20tvOS%2013.0+%20|%20visionOS%201.0+-15437D.svg)
 ![License](https://img.shields.io/badge/License-MIT-C8ECFE.svg)
+![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
+![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
+
 
 ColorKit is a powerful, cross-platform Swift package for advanced color manipulation, conversion, and management. It goes far beyond standard system colors, offering a unified API for wide-gamut color spaces, perceptual gamut mapping, HDR support, advanced blending modes, and next-generation accessibility (APCA) checks.
 

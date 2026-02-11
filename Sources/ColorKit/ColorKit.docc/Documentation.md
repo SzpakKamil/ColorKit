@@ -27,9 +27,9 @@ The `ColorKit` package provides a powerful, cross-platform Swift API for advance
 
 Whether you're creating dynamic themes with Dark Mode support, persisting user color choices via `Codable`, or performing complex color space transformations, `ColorKit` simplifies the process with an intuitive, SwiftUI-friendly API.
 
+@Image(source: "ColorKit-Banner", alt: "")
+
 ## Getting Started
-
-
 
 @Links(visualStyle: detailedGrid) {
     - <doc:AboutColorKit>
