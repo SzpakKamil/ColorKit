@@ -14,12 +14,14 @@ import SwiftUI
 #endif
 
 /// A protocol defining how a color space resolves its components to a standard representation.
+@_documentation(visibility: internal)
 public protocol CKGamut {
   /// Resolves the given components to their linearized representation in this gamut.
   func linearRepresentation(for components: CKColor.RGBA) -> CKColor.RGBA
 }
 
 /// A protocol for color models that can be converted back and forth from a standard RGBA representation.
+@_documentation(visibility: internal)
 public protocol CKModel {
   /// Create the model from standard RGBA components.
   init(from rgba: CKColor.RGBA)
@@ -120,7 +122,7 @@ extension CKColor {
     }
 
     // MARK: - Gamut Matrices (Unchanged)
-    public struct Matrices {
+    struct Matrices {
       static let sRGB_to_XYZ: [Double] = [
         0.4124564, 0.3575761, 0.1804375, 0.2126729, 0.7151522, 0.0721750, 0.0193339, 0.1191920,
         0.9503041,

@@ -8,15 +8,13 @@
 import SwiftUI
 
 #if canImport(CoreImage)
-  import CoreImage
+import CoreImage
 #endif
 
 #if canImport(UIKit)
-  import UIKit
-  public typealias NativeColor = UIColor
+import UIKit
 #elseif canImport(AppKit)
-  import AppKit
-  public typealias NativeColor = NSColor
+import AppKit
 #endif
 
 // MARK: - CKColor
@@ -28,31 +26,7 @@ public struct CKColor: Identifiable, Sendable, Codable, Equatable, Hashable,
 
   /// A 128-bit value-type identifier.
   /// Eliminates string allocation overhead during diffing/hashing.
-  public struct Identifier: Hashable, Sendable, Codable {
-    let primary: UInt64
-    let secondary: UInt64
 
-    /// Generates a stable, collision-resistant hash based on the color definition state.
-    fileprivate static func generate(
-      p: ColorDefinition, d: ColorDefinition?, hc: ColorDefinition?, hcd: ColorDefinition?,
-      cs: CKColor.ColorSpace
-    ) -> Identifier {
-      var hasher = Hasher()
-      hasher.combine(p.id)
-      hasher.combine(d?.id)
-      hasher.combine(hc?.id)
-      hasher.combine(hcd?.id)
-      hasher.combine(cs.rawValue)
-      let h1 = UInt64(bitPattern: Int64(hasher.finalize()))
-
-      var mixer = Hasher()
-      mixer.combine(cs.rawValue)
-      mixer.combine(p.id)
-      let h2 = UInt64(bitPattern: Int64(mixer.finalize()))
-
-      return Identifier(primary: h1, secondary: h2)
-    }
-  }
 
   public let colorSpace: CKColor.ColorSpace
 
@@ -60,9 +34,9 @@ public struct CKColor: Identifiable, Sendable, Codable, Equatable, Hashable,
   /// Calculated via bit-packing for O(1) access performance.
   public let id: Identifier
 
-  public var darkId: String? { dark?.id }
-  public var highContrastId: String? { highContrast?.id }
-  public var highContrastDarkId: String? { highContrastDark?.id }
+    var darkId: String? { dark?.id }
+    var highContrastId: String? { highContrast?.id }
+    var highContrastDarkId: String? { highContrastDark?.id }
 
   public var isLight: Bool { luminance > 0.5 }
   public var isDark: Bool { !isLight }
@@ -155,11 +129,13 @@ public struct CKColor: Identifiable, Sendable, Codable, Equatable, Hashable,
 
   // MARK: - Codable
 
+  @_documentation(visibility: internal)
   private enum CodingKeys: String, CodingKey {
     case id, darkId, highContrastId, highContrastDarkId, colorSpace
     case components, darkComponents, highContrastComponents, highContrastDarkComponents
   }
-
+    
+  @_documentation(visibility: internal)
   public init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     let idRaw = try container.decode(String.self, forKey: .id)
@@ -215,6 +191,7 @@ public struct CKColor: Identifiable, Sendable, Codable, Equatable, Hashable,
       colorSpace: colorSpace)
   }
 
+  @_documentation(visibility: internal)
   public func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(primary.id, forKey: .id)

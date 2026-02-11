@@ -92,6 +92,7 @@ extension CKColor {
       colorSpace: colorSpace)
   }
 
+  @_documentation(visibility: internal)
   public init(model: any CKModel, colorSpace: CKColor.ColorSpace = .sRGB) {
     let rgba = model.rgbRepresentation()
     let effectiveHeadroom = (colorSpace == .displayP3) ? rgba.headroom : nil

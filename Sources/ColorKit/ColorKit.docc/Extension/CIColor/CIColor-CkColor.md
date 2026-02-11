@@ -1,0 +1,43 @@
+# ``CoreImage/CIColor/ckColor``
+
+@Metadata {
+    @TitleHeading("Core Image Extensions")
+    @DisplayName("CKColor Bridge", style: symbol)
+    @SupportedLanguage(swift)
+    @Available(iOS, introduced: "13.0")
+    @Available(iPadOS, introduced: "13.0")
+    @Available(macOS, introduced: "10.15")
+    @Available(tvOS, introduced: "13.0")
+    @Available(watchOS, unavailable)
+    @Available(visionOS, introduced: "1.0")
+    @Available(swift, introduced: "5.9")
+    @Available(Xcode, introduced: "15.0")
+    @DocumentationExtension(mergeBehavior: override)
+}
+
+@Options {
+    @AutomaticTitleHeading(enabled)
+    @AutomaticArticleSubheading(disabled)
+}
+
+Converts a Core Image color to a `CKColor`.
+
+## Overview
+
+The `ckColor` property facilitates integration with Core Image workflows by bridging `CIColor` to ColorKit.
+
+### Purpose
+
+Since `CIColor` is often used in high-precision image processing, this bridge ensures that colors coming out of filters or CIImage pipelines can be easily analyzed or modified using ColorKit's perceptual models.
+
+> Note: This property is unavailable on watchOS.
+
+### Example Usage
+
+```swift
+import CoreImage
+import ColorKit
+
+let ciColor = CIColor(red: 0.5, green: 1.0, blue: 0.0)
+let ckColor = ciColor.ckColor
+```

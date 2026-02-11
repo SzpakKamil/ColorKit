@@ -15,29 +15,29 @@ import SwiftUI
 
 extension CKColor {
   /// A centralized utility for color format conversions and normalization.
-  public struct Converter: Sendable, Equatable, Hashable {
+    struct Converter: Sendable, Equatable, Hashable {
 
     // MARK: - Properties
 
     /// The normalized 8-character hex string (e.g., "#ff0000ff").
-    public var hex: String {
+    var hex: String {
       let f = { (v: Double) in Int(round(min(max(v, 0), 1) * 255)) }
       return String(format: "#%02x%02x%02x%02x", f(rgba.r), f(rgba.g), f(rgba.b), f(rgba.a))
     }
 
     /// The color components.
-    public let rgba: CKColor.RGBA
+    let rgba: CKColor.RGBA
 
     // MARK: - Initializers
 
     /// Initializes directly from an RGBA struct.
     /// (Required because other custom inits suppress the default memberwise init).
-    public init(rgba: CKColor.RGBA) {
+    init(rgba: CKColor.RGBA) {
       self.rgba = rgba
     }
 
     /// Initializes from a string, normalizing it. Returns nil if the string is invalid.
-    public init?(_ string: String) {
+    init?(_ string: String) {
       guard let normalized = Self.normalize(hex: string),
         let components = Self.parseHex(normalized)
       else { return nil }
@@ -45,12 +45,12 @@ extension CKColor {
     }
 
     /// Initializes from RGBA components.
-    public init(red: Double, green: Double, blue: Double, alpha: Double, headroom: Double? = nil) {
+    init(red: Double, green: Double, blue: Double, alpha: Double, headroom: Double? = nil) {
       self.rgba = CKColor.RGBA(r: red, g: green, b: blue, a: alpha, headroom: headroom)
     }
 
     /// Initializes from an integer value (0xRRGGBB or 0xRRGGBBAA).
-    public init(_ value: Int) {
+    init(_ value: Int) {
       let r: Double
       let g: Double
       let b: Double
@@ -73,7 +73,7 @@ extension CKColor {
     }
 
     /// Initializes from a native color in a specific color space.
-    public init?(color: NativeColor, in space: CKColor.ColorSpace) {
+    init?(color: NativeColor, in space: CKColor.ColorSpace) {
       guard let comps = Self.extractComponents(from: color, in: space) else { return nil }
       self.rgba = CKColor.RGBA(
         r: Double(comps.r), g: Double(comps.g), b: Double(comps.b), a: Double(comps.a))
@@ -82,12 +82,12 @@ extension CKColor {
     // MARK: - Generic Format Conversions
 
     /// Converts RGBA components to the specified CKModel type.
-    public static func convert<T: CKModel>(rgba: CKColor.RGBA, to type: T.Type) -> T {
+    static func convert<T: CKModel>(rgba: CKColor.RGBA, to type: T.Type) -> T {
       return T(from: rgba)
     }
 
     /// Converts a CKModel back to RGBA components.
-    public static func convertToRGB<T: CKModel>(model: T) -> CKColor.RGBA {
+    static func convertToRGB<T: CKModel>(model: T) -> CKColor.RGBA {
       return model.rgbRepresentation()
     }
 

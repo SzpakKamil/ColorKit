@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension CKColor {
-  public struct Luminance: DynamicProperty {
+    struct Luminance: DynamicProperty {
     @Environment(\.colorScheme) private var colorScheme
 
     private let color: CKColor
@@ -23,12 +23,12 @@ extension CKColor {
 
     /// Creates a luminance provider for the specified color.
     /// - Parameter color: The `CKColor` to monitor.
-    public init(color: CKColor) {
+    init(color: CKColor) {
       self.color = color
     }
 
     /// The calculated relative luminance for the current environment.
-    public var wrappedValue: Double {
+    var wrappedValue: Double {
       let components: CKColor.RGBA?
 
       if effectiveColorScheme == .dark {
@@ -46,7 +46,7 @@ extension CKColor {
     ///   - components: The RGBA components.
     ///   - colorSpace: The color space of the components.
     /// - Returns: A value between 0.0 (black) and 1.0 (white), or > 1.0 for HDR.
-    public static func calculate(for components: CKColor.RGBA, in colorSpace: CKColor.ColorSpace)
+    static func calculate(for components: CKColor.RGBA, in colorSpace: CKColor.ColorSpace)
       -> Double
     {
       // FIXED: Eliminated duplicate math & Added HDR Support.
@@ -83,7 +83,7 @@ extension CKColor {
     }
   }
 
-  public func luminance(in scheme: ColorScheme) -> Double {
+  func luminance(in scheme: ColorScheme) -> Double {
     let components: RGBA?
 
     if scheme == .dark {
