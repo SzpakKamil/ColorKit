@@ -217,7 +217,15 @@ public struct CKColor: Identifiable, Sendable, Codable, Equatable, Hashable,
   // MARK: - Native Conversion
 
   public var color: Color { Color(nativeColor) }
+    #if canImport(CoreImage)
+    #if canImport(UIKit)
+    public var ciColor: CIColor { CIColor(color: nativeColor) }
+    #else
+    public var ciColor: CIColor { CIColor(color: nativeColor) ?? .black }
+    #endif
+    #endif
 
+    public var cgColor: CGColor { nativeColor.cgColor }
   public var nativeColor: NativeColor {
     if dark == nil && highContrast == nil && highContrastDark == nil,
       let metadata = Self.registry[primary.id]

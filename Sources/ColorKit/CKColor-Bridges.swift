@@ -25,6 +25,39 @@ extension Color {
   public var ckColor: CKColor { CKColor(nativeColor: NativeColor(self)) }
 }
 
+@available(iOS 14.0, watchOS 7.0, macOS 11.0, tvOS 14.0, *)
+public extension Binding where Value == CKColor {
+    var asColor: Binding<Color> {
+        Binding<Color>(
+            get: { self.wrappedValue.color },
+            set: { self.wrappedValue = CKColor($0) }
+        )
+    }
+}
+
+public extension Binding where Value == CKColor {
+    var asNativeColor: Binding<NativeColor> {
+        Binding<NativeColor>(
+            get: { self.wrappedValue.nativeColor },
+            set: { self.wrappedValue = CKColor(nativeColor: $0) }
+        )
+    }
+    #if canImport(CoreImage)
+    var asCIColor: Binding<CIColor> {
+        Binding<CIColor>(
+            get: { self.wrappedValue.ciColor },
+            set: { self.wrappedValue = CKColor(ciColor: $0) }
+        )
+    }
+    #endif
+    var asCGColor: Binding<CGColor> {
+        Binding<CGColor>(
+            get: { self.wrappedValue.cgColor },
+            set: { self.wrappedValue = CKColor(cgColor: $0) }
+        )
+    }
+}
+
 #if canImport(CoreImage)
   extension CIColor {
     public var ckColor: CKColor { CKColor(nativeColor: NativeColor(ciColor: self)) }
@@ -48,3 +81,6 @@ extension CGColor {
     }
   }
 #endif
+#Preview{
+    
+}

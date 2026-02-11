@@ -59,6 +59,7 @@ Whether you're creating dynamic themes with Dark Mode support, persisting user c
 - ``CoreGraphics/CGColor/``
 - ``CoreImage/CIColor/``
 - ``SwiftUICore/Color/``
+- ``SwiftUICore/Binding/``
 - ``UIKit/UIColor``
 - ``AppKit/UIColor``
 

@@ -98,6 +98,8 @@ if let encoded = try? JSONEncoder().encode(themeColor) {
 
 ### Color Components
 - ``color``
+- ``ciColor``
+- ``cgColor``
 - ``nativeColor``
 - ``colorSpace``
 - ``hexString``
