@@ -6,7 +6,6 @@
 ![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
 
-
 ColorKit is a powerful, cross-platform Swift package for advanced color manipulation, conversion, and management. It goes far beyond standard system colors, offering a unified API for wide-gamut color spaces, perceptual gamut mapping, HDR support, advanced blending modes, and next-generation accessibility (APCA) checks.
 
 Designed for iOS, macOS, watchOS, tvOS, and visionOS, ColorKit bridges the gap between raw mathematical color models and system UI frameworks (**SwiftUI**, **UIKit**, **AppKit**). The `CKColor` type is used to match Apple's other color types like `UIColor`, `NSColor`, `CGColor`, and `CIColor`, while also avoiding overlap with SwiftUI's native `Color` type.
