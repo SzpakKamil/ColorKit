@@ -1,32 +1,87 @@
 # ColorKit
-
 ![Swift Version](https://img.shields.io/badge/Swift-5.9-teal.svg)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2013.0+%20|%20macOS%2010.15+%20|%20watchOS%206.0+%20|%20tvOS%2013.0+%20|%20visionOS%201.0+-15437D.svg)
 ![License](https://img.shields.io/badge/License-MIT-C8ECFE.svg)
+
 ![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
 
-ColorKit is a powerful, cross-platform Swift package for advanced color manipulation, conversion, and management. It goes far beyond standard system colors, offering a unified API for wide-gamut color spaces, perceptual gamut mapping, HDR support, advanced blending modes, and next-generation accessibility (APCA) checks.
+A Swift package for advanced color manipulation, providing a unified API for color space conversions, perceptual gamut mapping, advanced blending modes, and modern accessibility checks. `ColorKit` bridges platform-native color types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
 
-Designed for iOS, macOS, watchOS, tvOS, and visionOS, ColorKit bridges the gap between raw mathematical color models and system UI frameworks (**SwiftUI**, **UIKit**, **AppKit**). The `CKColor` type is used to match Apple's other color types like `UIColor`, `NSColor`, `CGColor`, and `CIColor`, while also avoiding overlap with SwiftUI's native `Color` type.
+View the [Documentation](https://documentation.kamilszpak.com/documentation/colorkit).
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [License](#license)
 
 ## Features
 
-- **Extensive Color Space Support**: sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, HSL, and CMYK.
-- **Dynamic Color System**: Define colors with semantic variants for Light, Dark, High Contrast, and High Contrast Dark modes in a single object.
-- **Perceptual Gamut Mapping**: Intelligent downscaling from wide gamuts (like P3) to smaller ones (like sRGB) using OKLAB to preserve hue and perceptual lightness.
-- **Advanced Blending**: Full support for Photoshop-style blend modes (Multiply, Overlay, Screen, Soft Light, etc.) with correct alpha compositing.
-- **Accessibility First**: Built-in tools for WCAG 2.1 contrast ratios and the modern **APCA (WCAG 3.0)** algorithm for precise text-on-background legibility checks.
-- **HDR & wide-gamut Ready**: Handles extended dynamic range (EDR) values (headroom > 1.0) and preserves technical precision across wide gamuts.
-- **Persistence Ready**: Full `Codable` conformance makes it perfect for saving user preferences in **SwiftData**, **AppStorage**, or **UserDefaults**.
-- **Localization Ready**: Built-in support for localized color names in all native iOS languages via ``CKColor/localizedDescription``.
-- **High Performance**: Optimized 128-bit value-type identifier system for O(1) diffing and hashing.
+*   **Broad Color Space Support**: Convert between sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, and CMYK.
+*   **Dynamic & Semantic Colors**: Define color assets with variants for light, dark, and high-contrast modes in a single `CKColor` object.
+*   **Perceptual Gamut Mapping**: Preserve hue and perceptual lightness when converting from wide-gamut (P3) to smaller color spaces (sRGB) using the OKLAB color space.
+*   **Advanced Blending Modes**: Implements common blending modes like Multiply, Overlay, Screen, and Soft Light with correct alpha compositing.
+*   **Modern Accessibility**: Includes tools for both WCAG 2.1 contrast ratios and the modern APCA (WCAG 3.0) algorithm.
+*   **HDR & Wide-Gamut Ready**: Natively handles extended dynamic range (EDR) values and maintains precision in wide-gamut color spaces.
+*   **Codable Conformance**: Enables easy persistence in SwiftData, AppStorage, or UserDefaults.
+
+## Usage
+
+### Creating and Using Colors
+`CKColor` provides a unified type that adapts to system traits and bridges to native types.
+
+```swift
+import ColorKit
+import SwiftUI
+
+// Initialize from a Hex String
+let brandColor = CKColor(hexString: "#FF5733")
+
+// Define a semantic color that adapts to system appearance
+let background = CKColor(
+    hexString: "#FFFFFF",        // Light Mode
+    hexStringDark: "#121212"     // Dark Mode
+)
+
+struct ContentView: View {
+    var body: some View {
+        Circle().fill(brandColor) // Conforms to ShapeStyle
+    }
+}
+```
+
+### Color Space Conversion
+Work directly with perceptually uniform or design-oriented coordinate systems.
+
+```swift
+// Convert a Display P3 red to sRGB
+let p3Color = CKColor(red: 1.0, green: 0.0, blue: 0.0, colorSpace: .displayP3)
+let sRGBColor = p3Color.converted(to: .sRGB)
+
+// Create a color in the OKLAB space
+let oklabColor = CKColor(okL: 0.7, okA: 0.1, okB: -0.1, colorSpace: .okLab)
+```
+
+### Accessibility Checks
+Use the Advanced Perceptual Contrast Algorithm (APCA) for modern accessibility.
+
+```swift
+let text = CKColor(hexString: "#333333")
+let bg = CKColor(hexString: "#FFFFFF")
+
+// Check contrast based on WCAG 3.0 standards for 16pt text
+let isReadable = text.isAPCAAccessible(on: bg, size: 16, weight: .regular)
+```
 
 ## Installation
 
 ### Swift Package Manager
-
-Add `ColorKit` to your project via Xcode (**File > Add Package Dependency**) or by adding it to your `Package.swift`:
+Add `ColorKit` as a dependency in your `Package.swift` file or via Xcode.
 
 ```swift
 dependencies: [
@@ -34,117 +89,15 @@ dependencies: [
 ]
 ```
 
-### Expert Guidance (CLI Agent Skill)
-
-Get expert guidance on color manipulation and conversion directly in your terminal by installing the ColorKit skill for your CLI agent.
-
-**Using skills.sh:**
+### Agent Skill
+Install the Agent Skill for AI-assisted workflows.
 ```bash
 npx skills add https://github.com/SzpakKamil/AgentSkills --skill ColorKit
 ```
 
-**Using ClawdHub:**
-```bash
-npx dlx clawdhub@latest install colorkit
-```
-
-## Quick Start
-
-### 1. Creating Dynamic Colors
-
-ColorKit provides a unified `CKColor` type that automatically adapts to system traits.
-
-```swift
-import ColorKit
-
-// Initialize from Hex String (Supports 3, 4, 6, 8 digits)
-let brandColor = CKColor(hexString: "#FF5733")
-
-// Define a semantic adaptive color
-let background = CKColor(
-    hexString: "#FFFFFF",              // Light Mode
-    hexStringDark: "#121212",          // Dark Mode
-    hexStringHighContrast: "#FFFFFF",  // High Contrast Light
-    hexStringHighContrastDark: "#000000" // High Contrast Dark
-)
-```
-
-### 2. Advanced Color Models
-
-Work directly with perceptually uniform or design-oriented coordinate systems.
-
-```swift
-// OKLAB (Perceptually uniform, HDR-ready)
-let oklab = CKColor(okL: 0.7, okA: 0.1, okB: -0.1, colorSpace: .okLab)
-
-// LCH (Cylindrical representation: Lightness, Chroma, Hue)
-let lch = CKColor(L: 50.0, C: 100.0, h: 40.0, colorSpace: .lch)
-
-// CMYK (Print-oriented)
-let print = CKColor(cyan: 0.1, magenta: 0.5, yellow: 0, key: 0.2)
-```
-
-### 3. Modern Accessibility (APCA)
-
-Move beyond legacy ratios with the Advanced Perceptual Contrast Algorithm.
-
-```swift
-let text = CKColor(hexString: "#333333")
-let bg = CKColor(hexString: "#FFFFFF")
-
-// Check if readable for 16pt regular text under WCAG 3.0 standards
-let isReadable = text.isAPCAAccessible(on: bg, size: 16, weight: .regular) 
-```
-
-### 4. Perceptual Gamut Mapping
-
-Convert colors between spaces while preserving their visual intent.
-
-```swift
-let p3Color = CKColor(red: 1.0, green: 0.0, blue: 0.0, colorSpace: .displayP3)
-
-// Intelligent mapping from wide P3 to narrow sRGB
-let sRGB = p3Color.converted(to: .sRGB, iterations: 6)
-```
-
-### 5. SwiftUI Integration
-
-`CKColor` conforms to `ShapeStyle` and bridges seamlessly to native types.
-
-```swift
-import SwiftUI
-import ColorKit
-
-struct ColorPreview: View {
-    let accent = CKColor.mint
-    
-    var body: some View {
-        Circle()
-            .fill(accent) // Used directly as ShapeStyle
-        
-        Text(accent.localizedDescription)
-            .foregroundStyle(accent)
-    }
-}
-```
-
-## Documentation
-
-Exhaustive documentation is available via DocC in the `Sources/ColorKit/ColorKit.docc` directory. It covers:
-
-- **CKColor**: Modifiers, Initializers, and Description Properties.
-- **ColorSpace**: Technical details on standard RGB, Extended/HDR, and Wide Gamut spaces.
-- **ColorModels**: Mathematical specifications for RGBA, HSL, CMYK, LAB, OKLAB, and LCH.
-- **Blending**: Detailed explanation of all ``CKBlendMode`` cases.
-- **Contrast**: Implementation details for WCAG 2.1 and APCA (WCAG 3.0).
-- **Bridges**: Extension details for `Color`, `CGColor`, `CIColor`, and `UIColor`/`NSColor`.
-
-## Credits & References
-
-- **OKLAB**: Implementation based on Björn Ottosson's "A perceptual color space for image processing" (2020).
-- **APCA**: Based on the Advanced Perceptual Contrast Algorithm W3 Silver level draft.
-- **Color Spaces**: Adheres to IEC 61966-2-1 (sRGB), SMPTE RP 431-2 (Display P3), and ISO 22028-2 (ROMM RGB).
+## Requirements
+* **Platforms**: iOS 13.0+, macOS 10.15+, tvOS 13.0+, watchOS 6.0+, visionOS 1.0+
+* **Tools**: Swift 5.9+, Xcode 15.0+
 
 ## License
-
-This project is licensed under the MIT License.
+`ColorKit` is released under the MIT license.
