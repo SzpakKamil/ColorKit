@@ -6,7 +6,7 @@
 ![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
 
-A Swift package for advanced color manipulation, providing a unified API for color space conversions, perceptual gamut mapping, advanced blending modes, and modern accessibility checks. `ColorKit` bridges platform-native color types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
+Advanced color manipulation for Swift. `ColorKit` unifies color space conversions, perceptual gamut mapping, blending modes, and accessibility checks. Bridges platform-native types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
 
 View the [Documentation](https://documentation.kamilszpak.com/documentation/colorkit).
 
@@ -23,17 +23,17 @@ View the [Documentation](https://documentation.kamilszpak.com/documentation/colo
 ## Features
 
 *   **Broad Color Space Support**: Convert between sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, and CMYK.
-*   **Dynamic & Semantic Colors**: Define color assets with variants for light, dark, and high-contrast modes in a single `CKColor` object.
-*   **Perceptual Gamut Mapping**: Preserve hue and perceptual lightness when converting from wide-gamut (P3) to smaller color spaces (sRGB) using the OKLAB color space.
-*   **Advanced Blending Modes**: Implements common blending modes like Multiply, Overlay, Screen, and Soft Light with correct alpha compositing.
-*   **Modern Accessibility**: Includes tools for both WCAG 2.1 contrast ratios and the modern APCA (WCAG 3.0) algorithm.
-*   **HDR & Wide-Gamut Ready**: Natively handles extended dynamic range (EDR) values and maintains precision in wide-gamut color spaces.
-*   **Codable Conformance**: Enables easy persistence in SwiftData, AppStorage, or UserDefaults.
+*   **Dynamic & Semantic Colors**: Define light, dark, and high-contrast variants in a single `CKColor` object.
+*   **Perceptual Gamut Mapping**: Preserve hue and lightness when converting wide-gamut (P3) to smaller spaces (sRGB) via OKLAB.
+*   **Advanced Blending Modes**: Apply blending modes like Multiply, Overlay, Screen, and Soft Light with correct alpha compositing.
+*   **Modern Accessibility**: Check WCAG 2.1 contrast ratios and APCA (WCAG 3.0) compliance.
+*   **HDR & Wide-Gamut Ready**: Handle extended dynamic range (EDR) values and maintain wide-gamut precision.
+*   **Codable Conformance**: Persist colors in SwiftData, AppStorage, or UserDefaults.
 
 ## Usage
 
 ### Creating and Using Colors
-`CKColor` provides a unified type that adapts to system traits and bridges to native types.
+Use `CKColor` to adapt to system traits and bridge native types.
 
 ```swift
 import ColorKit
@@ -56,7 +56,7 @@ struct ContentView: View {
 ```
 
 ### Color Space Conversion
-Work directly with perceptually uniform or design-oriented coordinate systems.
+Manipulate colors in perceptually uniform or design-oriented coordinate systems.
 
 ```swift
 // Convert a Display P3 red to sRGB
@@ -68,7 +68,7 @@ let oklabColor = CKColor(okL: 0.7, okA: 0.1, okB: -0.1, colorSpace: .okLab)
 ```
 
 ### Accessibility Checks
-Use the Advanced Perceptual Contrast Algorithm (APCA) for modern accessibility.
+Validate accessibility with the Advanced Perceptual Contrast Algorithm (APCA).
 
 ```swift
 let text = CKColor(hexString: "#333333")
