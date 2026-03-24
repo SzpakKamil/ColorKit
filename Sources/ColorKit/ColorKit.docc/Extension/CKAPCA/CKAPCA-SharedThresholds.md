@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ``ColorKit/CKAPCA/sharedThresholds``
 
 @Metadata {
@@ -15,6 +16,8 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
+=======
+>>>>>>> 1.0
 Global lookup table for accessibility checks.
 
 ## Overview
