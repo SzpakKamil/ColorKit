@@ -20,17 +20,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-A standard indigo color that adapts to the system environment.
+Standard indigo color. Adapts to system.
 
 ## Overview
 
 `CKColor.indigo` provides a platform-integrated indigo color. On supported platforms (iOS 15.0+, macOS 12.0+), it resolves to the system indigo variant; otherwise, it falls back to a standard blue.
 
-> Note: Dynamic appearance, high contrast, and accessibility adjustments are only active when a system variant is available for resolution on the current platform.
+> Note: Dynamic appearance, high contrast, and accessibility adjustments active only when a system variant is available for resolution on the current platform.
 
 ### Localization
 
-The color name is translated into every native iOS language and is available through the ``CKColor/localizedDescription`` property.
+The color name is translated into every native iOS language and Access via ``CKColor/localizedDescription`` property.
 
 ### Details
 

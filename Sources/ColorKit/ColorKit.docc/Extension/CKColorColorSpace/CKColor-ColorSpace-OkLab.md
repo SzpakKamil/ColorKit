@@ -19,7 +19,7 @@ OKLAB perceptual color space.
 
 ## Overview
 
-The `okLab` case represents the modern OKLAB perceptual color space. It is designed to be easier to use and more perceptually accurate than CIE LAB, particularly for image processing tasks like gradients and blending, as it avoids common hueshift artifacts.
+The `okLab` case represents the modern OKLAB perceptual color space. It is easier to use and more perceptually accurate than CIE LAB, particularly for image processing tasks like gradients and blending, as it avoids common hueshift artifacts.
 
 ### Details
 

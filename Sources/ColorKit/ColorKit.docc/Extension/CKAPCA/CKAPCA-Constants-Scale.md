@@ -19,11 +19,11 @@ The overall scaling factor for Lc values.
 
 ## Overview
 
-This factor scales the raw mathematical result to the standardized Lightness Contrast (`Lc`) range. The default value is `1.14`.
+Scales the raw result to the standardized Lightness Contrast (`Lc`) range. Defaults to `1.14`.
 
 ### Purpose
 
-The `scale` property provides a final normalization of the contrast value. It ensures that the resulting `Lc` numbers fit within the standard -108 to +106 range used for compliance checking and UI design tools.
+`scale` normalizes the contrast value. It fits the resulting `Lc` numbers within the standard -108 to +106 range for compliance checking and design tools.
 
 ### Example Usage
 

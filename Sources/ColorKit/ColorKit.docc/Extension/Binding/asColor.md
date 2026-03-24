@@ -21,11 +21,12 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Projections for `Binding<CKColor>` to `Binding<Color>`.
+
+Projects `Binding<CKColor>` to `Binding<Color>`.
 
 ## Overview
 
-The `asColor` property provides a read-write bridge between a `CKColor` binding and a SwiftUI `Color` binding. This allows for seamless integration with SwiftUI's native `ColorPicker` and other standard UI components while maintaining the advanced features of `CKColor`.
+Use `asColor` to bridge a `CKColor` binding to a SwiftUI `Color` binding. Integrate with SwiftUI components like `ColorPicker` while retaining `CKColor` features.
 
 ### Details
 

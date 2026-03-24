@@ -24,7 +24,7 @@ Returns the CIE LAB components of the color.
 
 ## Overview
 
-The `labComponents()` function converts the color's primary components to the CIE LAB color space, which is designed to be perceptually uniform.
+The `labComponents()` function converts the color's primary components to the CIE LAB color space, which is perceptually uniform.
 
 ### Details
 

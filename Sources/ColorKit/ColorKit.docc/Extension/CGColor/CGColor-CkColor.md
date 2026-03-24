@@ -25,11 +25,11 @@ Converts a Core Graphics color to a `CKColor`.
 
 ## Overview
 
-The `ckColor` property allows low-level `CGColor` objects to be converted into the ColorKit format.
+Use `ckColor` to convert `CGColor` objects into the ColorKit format.
 
 ### Purpose
 
-This bridge is essential when working with layers (`CALayer`), standard drawing contexts, or other frameworks that return `CGColor`. It automatically handles the conversion from the source `CGColorSpace` into ColorKit's working representation.
+Bridge `CGColor` from layers (`CALayer`) or drawing contexts to ColorKit. This property handles conversion from the source `CGColorSpace` to ColorKit's representation.
 
 ### Example Usage
 

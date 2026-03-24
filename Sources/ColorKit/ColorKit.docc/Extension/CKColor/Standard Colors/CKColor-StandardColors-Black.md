@@ -20,17 +20,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-A standard black color that adapts to the system environment.
+Standard black color. Adapts to system.
 
 ## Overview
 
 `CKColor.black` provides a platform-integrated black color. It resolves to the system black variant.
 
-> Note: Dynamic appearance, high contrast, and accessibility adjustments are only active when a system variant is available for resolution on the current platform.
+> Note: Dynamic appearance, high contrast, and accessibility adjustments active only when a system variant is available for resolution on the current platform.
 
 ### Localization
 
-The color name is translated into every native iOS language and is available through the ``CKColor/localizedDescription`` property.
+The color name is translated into every native iOS language and Access via ``CKColor/localizedDescription`` property.
 
 ### Details
 

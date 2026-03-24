@@ -21,11 +21,11 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Projections for `Binding<CKColor>` to `Binding<NativeColor>`.
+Projects `Binding<CKColor>` to `Binding<NativeColor>`.
 
 ## Overview
 
-The `asNativeColor` property provides a read-write bridge between a `CKColor` binding and a platform-native color binding (`UIColor` or `NSColor`). This is essential when bridging between SwiftUI and UIKit/AppKit components that require color bindings.
+Use `asNativeColor` to bridge a `CKColor` binding to a platform-native color binding (`UIColor` or `NSColor`). Connect SwiftUI state to UIKit or AppKit components requiring color bindings.
 
 ### Details
 

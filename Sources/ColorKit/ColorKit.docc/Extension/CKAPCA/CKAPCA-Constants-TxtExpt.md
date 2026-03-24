@@ -19,11 +19,11 @@ The exponent for text luminance.
 
 ## Overview
 
-This exponent is applied to the text color's linear luminance. The default value is `1.14`.
+Applies to the text color's linear luminance. Defaults to `1.14`.
 
 ### Purpose
 
-The `txtExpt` constant defines how the luminance of the foreground (text) is weighted. It works in tandem with `bgExpt` to establish the "polarity" of the contrast calculation, distinguishing between light-on-dark and dark-on-light.
+`txtExpt` weights the foreground (text) luminance. It works with `bgExpt` to establish contrast calculation "polarity", distinguishing light-on-dark from dark-on-light.
 
 ### Example Usage
 

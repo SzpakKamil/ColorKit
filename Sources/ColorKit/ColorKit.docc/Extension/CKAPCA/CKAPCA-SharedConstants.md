@@ -15,15 +15,15 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-The global mathematical constants used for contrast calculation.
+Global mathematical constants for contrast calculation.
 
 ## Overview
 
-Modify this shared instance to update the math engine parameters globally for the entire application.
+Modify this shared instance to update math engine parameters application-wide.
 
 ### Purpose
 
-The `sharedConstants` property provides a centralized point of configuration. By updating this value, you ensure that every part of your app—from automated UI checks to dynamic color generators—uses the exact same mathematical basis for its contrast logic.
+`sharedConstants` centralizes configuration. Updating this value ensures that every part of the app—from automated UI checks to dynamic color generators—uses the same mathematical basis for contrast logic.
 
 ### Example Usage
 

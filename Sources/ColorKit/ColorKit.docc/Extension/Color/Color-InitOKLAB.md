@@ -19,7 +19,7 @@ Creates a SwiftUI `Color` from OKLAB components.
 
 ## Overview
 
-Enables the use of the modern OKLAB perceptual color space when defining SwiftUI colors. OKLAB is designed to be perceptually accurate and is ideal for creating smooth gradients and natural color transformations.
+Enables the use of the modern OKLAB perceptual color space when defining SwiftUI colors. OKLAB is perceptually accurate and is ideal for creating smooth gradients and natural color transformations.
 
 ### Parameters
 

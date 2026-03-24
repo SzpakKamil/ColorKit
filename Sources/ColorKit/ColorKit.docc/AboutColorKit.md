@@ -18,43 +18,28 @@
     @AutomaticSeeAlso(disabled)
 }
 
-Learn about the powerful, cross-platform `ColorKit` package for advanced color manipulation and conversion.
+Manage colors across all Apple platforms with `ColorKit`.
 
 ## Overview
 
-The `ColorKit` package is a comprehensive Swift library designed for advanced color management across all Apple platforms. It extends beyond standard system colors to provide a unified API for wide-gamut color spaces, perceptual gamut mapping, HDR support, and advanced blending modes. Whether you're building a design tool or an accessible user interface, `ColorKit` bridges the gap between raw mathematical color models and system UI frameworks like SwiftUI, UIKit, and AppKit.
+`ColorKit` is a Swift library for advanced color management. It bridges raw mathematical color models and system UI frameworks (SwiftUI, UIKit, AppKit) to support wide-gamut color spaces, perceptual gamut mapping, HDR, and blending modes.
 
-## Why Use ColorKit?
+## Features
 
-The `ColorKit` package empowers developers with tools that surpass standard color APIs:
+- **Universal API**: A single `CKColor` type works on iOS, macOS, watchOS, tvOS, and visionOS.
+- **Advanced Color Spaces**: Supports sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, HSL, and CMYK.
+- **Perceptual Accuracy**: Uses OKLAB-based gamut mapping to preserve hue and lightness during conversions.
+- **Accessibility**: Includes WCAG 2.1 contrast ratios and APCA (WCAG 3.0) algorithms.
+- **Dynamic & Semantic**: Defines colors with Light, Dark, and High Contrast variants.
+- **Persistence**: Conforms to `Codable` and `Sendable` for storage in SwiftData, AppStorage, or UserDefaults.
+- **SwiftUI Integration**: Conforms to `ShapeStyle` for direct use in views.
 
-- **Universal API**: A single `CKColor` type that works seamlessly across iOS, macOS, watchOS, tvOS, and visionOS.
-- **Advanced Color Spaces**: Full support for sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, HSL, and CMYK.
-- **Perceptual Accuracy**: Uses OKLAB-based gamut mapping to preserve hue and perceptual lightness when converting between wide and narrow gamuts.
-- **Accessibility First**: Built-in support for WCAG 2.1 contrast ratios and the modern APCA (WCAG 3.0) algorithm for precise readability checks.
-- **Dynamic & Semantic**: Define colors with variants for Light, Dark, and High Contrast modes in a single object.
-- **Persistence Ready**: Full `Codable` and `Sendable` conformance for easy storage in SwiftData, AppStorage, or UserDefaults.
-- **SwiftUI Integration**: Conforms to `ShapeStyle`, allowing direct use in SwiftUI views.
+## Capabilities
 
-## Key Capabilities
-
-The `ColorKit` package offers a wide range of functionality for color-centric applications:
-
-- **Color Creation**:
-  - Initialize via Hex strings (3, 4, 6, 8 digits) or Hex integers.
-  - Create colors using specialized models like OKLAB, HSL, or CMYK.
-  - Define adaptive colors that automatically respond to system appearance changes.
-
-- **Conversions & Blending**:
-  - Convert between any supported color space with optional perceptual gamut mapping.
-  - Apply Photoshop-style blend modes (Multiply, Overlay, Screen, Soft Light, etc.) with correct alpha handling.
-
-- **Accessibility**:
-  - Calculate contrast ratios following WCAG standards.
-  - Perform APCA (Advanced Perceptual Contrast Algorithm) checks for modern typography needs.
-
-- **Localization**:
-  - Built-in support for localized color names (e.g., "Red" vs. "Czerwony") via standard localization files.
+- **Creation**: Initialize via Hex strings/integers, or specialized models (OKLAB, HSL, CMYK). Define adaptive colors.
+- **Conversions & Blending**: Convert between color spaces with perceptual mapping. Apply blend modes (Multiply, Overlay, Screen) with alpha handling.
+- **Accessibility**: Calculate WCAG contrast ratios and perform APCA checks.
+- **Localization**: Localize color names (e.g., "Red" vs. "Czerwony").
 
 Example:
 
@@ -63,7 +48,7 @@ import SwiftUI
 import ColorKit
 
 struct ColorExampleView: View {
-    // A dynamic color that supports Light and Dark modes
+    // Dynamic color for Light and Dark modes
     let brandColor = CKColor(hexString: "#007AFF", hexStringDark: "#0A84FF")
     
     var body: some View {
@@ -84,15 +69,14 @@ struct ColorExampleView: View {
 }
 ```
 
-## Target Use Cases
+## Use Cases
 
-The `ColorKit` package is ideal for:
-- **Design Tools**: Building apps that require precise color manipulation and professional blending modes.
-- **Theming Systems**: Creating complex, adaptive color themes that persist across user sessions.
-- **Accessibility-Focused Apps**: Ensuring high standards of readability with modern contrast algorithms.
-- **Cross-Platform Development**: Sharing color logic and definitions between iOS and macOS targets effortlessly.
+- **Design Tools**: Precise color manipulation and blending.
+- **Theming**: Adaptive themes that persist across sessions.
+- **Accessibility**: Readability checks with modern algorithms.
+- **Cross-Platform**: Share color logic between iOS and macOS.
 
 ## Next Steps
 
-- Learn how to integrate the package in <doc:SetUp>.
-- Explore the main API reference in <doc:ColorKit>.
+- <doc:SetUp>
+- <doc:ColorKit>

@@ -20,17 +20,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-A standard white color that adapts to the system environment.
+Standard white color. Adapts to system.
 
 ## Overview
 
 `CKColor.white` provides a platform-integrated white color. It resolves to the system white variant.
 
-> Note: Dynamic appearance, high contrast, and accessibility adjustments are only active when a system variant is available for resolution on the current platform.
+> Note: Dynamic appearance, high contrast, and accessibility adjustments active only when a system variant is available for resolution on the current platform.
 
 ### Localization
 
-The color name is translated into every native iOS language and is available through the ``CKColor/localizedDescription`` property.
+The color name is translated into every native iOS language and Access via ``CKColor/localizedDescription`` property.
 
 ### Details
 

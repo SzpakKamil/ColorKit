@@ -19,11 +19,11 @@ The exponent for background luminance.
 
 ## Overview
 
-This exponent is applied to the background color's linear luminance. The default value is `1.61`.
+Applies to the background color's linear luminance. Defaults to `1.61`.
 
 ### Purpose
 
-`bgExpt` accounts for the "flare" effect (admittance) of the background. It ensures that the algorithm correctly predicts contrast loss when text is placed on extremely bright backgrounds compared to darker ones.
+`bgExpt` accounts for background "flare" (admittance). It predicts contrast loss when placing text on extremely bright backgrounds versus darker ones.
 
 ### Example Usage
 

@@ -21,15 +21,16 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Projections for `Binding<CKColor>` to `Binding<CGColor>`.
+
+Projects `Binding<CKColor>` to `Binding<CGColor>`.
 
 ## Overview
 
-The `asCGColor` property provides a read-write bridge between a `CKColor` binding and a `CGColor` binding. This allows you to use `CKColor` state with APIs that require a `Binding<CGColor>`, such as custom color pickers or low-level drawing utilities.
+Use `asCGColor` to bridge a `CKColor` binding to a `CGColor` binding. Connect `CKColor` state to APIs requiring `Binding<CGColor>`, such as custom color pickers or low-level drawing utilities.
 
 ### Details
 
 - **Type:** `Binding<CGColor>`
 - **Behavior:**
     - **Get:** Returns the `cgColor` property of the wrapped `CKColor`.
-    - **Set:** Updates the wrapped `CKColor` using a new `CGColor`.
+    - **Set:** Updates the wrapped `CKColor` with the new `CGColor`.

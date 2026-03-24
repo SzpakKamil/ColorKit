@@ -19,11 +19,11 @@ The main scaling exponent for the APCA formula.
 
 ## Overview
 
-A coefficient used to adjust the overall contrast curve. The default value is `0.56`, as defined in the APCA-W3 Silver draft.
+Adjusts the overall contrast curve. Defaults to `0.56` (APCA-W3 Silver draft).
 
 ### Purpose
 
-The `sExpt` property controls the power curve of the contrast calculation. It is critical for mapping the raw luminance difference into a value that matches human perceptual nonlinearities.
+`sExpt` controls the contrast calculation power curve. It maps the raw luminance difference to match human perceptual nonlinearities.
 
 ### Example Usage
 

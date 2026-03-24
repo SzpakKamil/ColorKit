@@ -19,11 +19,11 @@ The threshold for black level compensation.
 
 ## Overview
 
-A small constant used to prevent mathematical instability when dealing with near-black colors. The default value is `0.02`.
+Prevents mathematical instability with near-black colors. Defaults to `0.02`.
 
 ### Purpose
 
-`blkThrs` acts as a "floor" for luminance values. It prevents the algorithm from producing erratic or infinite results when one of the colors is pure black or very close to it, ensuring smooth math at the bottom of the dynamic range.
+`blkThrs` sets a luminance "floor". It prevents erratic or infinite results when a color is pure black or near-black, ensuring mathematical stability at the bottom of the dynamic range.
 
 ### Example Usage
 

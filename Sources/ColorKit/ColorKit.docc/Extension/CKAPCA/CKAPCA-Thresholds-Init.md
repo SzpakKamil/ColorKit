@@ -19,8 +19,8 @@ Creates a custom accessibility threshold lookup table.
 
 ## Overview
 
-Use this initializer to define a custom logic for determining accessibility compliance. 
+Define custom logic for determining accessibility compliance.
 
 ### Parameters
 
-- `lookup`: A closure that takes a font `size` (Double) and a ``ColorKit/CKColor/FontWeight`` and returns the minimum required `Lc` value.
+- `lookup`: Closure taking font `size` (Double) and ``ColorKit/CKColor/FontWeight``, returning the minimum required `Lc` value.

@@ -21,16 +21,16 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Projections for `Binding<CKColor>` to `Binding<CIColor>`.
+Projects `Binding<CKColor>` to `Binding<CIColor>`.
 
 ## Overview
 
-The `asCIColor` property provides a read-write bridge between a `CKColor` binding and a `CIColor` binding. This is useful when you need to drive Core Image filter parameters directly from a `CKColor` state.
+Use `asCIColor` to bridge a `CKColor` binding to a `CIColor` binding. Drive Core Image filter parameters directly from `CKColor` state.
 
 ### Details
 
 - **Type:** `Binding<CIColor>`
-- **Availability:** Only available on platforms where Core Image is supported.
+- **Availability:** Platforms supporting Core Image.
 - **Behavior:**
     - **Get:** Returns the `ciColor` property of the wrapped `CKColor`.
-    - **Set:** Updates the wrapped `CKColor` using a new `CIColor`.
+    - **Set:** Updates the wrapped `CKColor` with the new `CIColor`.

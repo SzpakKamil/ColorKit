@@ -15,8 +15,8 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-Creates a new set of APCA constants with default values.
+Creates a set of APCA constants.
 
 ## Overview
 
-Initializes the struct with the standard APCA-W3 Silver coefficients.
+Initializes the struct with standard APCA-W3 Silver coefficients.

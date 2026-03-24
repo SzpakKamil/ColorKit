@@ -20,17 +20,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-A standard brown color that adapts to the system environment.
+Standard brown color. Adapts to system.
 
 ## Overview
 
-`CKColor.brown` provides a platform-integrated brown color. It automatically resolves to the appropriate system variant (such as `systemBrown` on iOS or macOS).
+`CKColor.brown` provides a platform-integrated brown color. Resolves to the appropriate system variant (such as `systemBrown` on iOS or macOS).
 
-> Note: Dynamic appearance, high contrast, and accessibility adjustments are only active when a system variant is available for resolution on the current platform.
+> Note: Dynamic appearance, high contrast, and accessibility adjustments active only when a system variant is available for resolution on the current platform.
 
 ### Localization
 
-The color name is translated into every native iOS language and is available through the ``CKColor/localizedDescription`` property.
+The color name is translated into every native iOS language and Access via ``CKColor/localizedDescription`` property.
 
 ### Details
 

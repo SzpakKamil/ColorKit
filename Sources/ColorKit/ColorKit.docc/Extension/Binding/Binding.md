@@ -21,13 +21,13 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Projections and bridges for SwiftUI bindings.
+Projects and bridges for SwiftUI bindings.
 
 ## Overview
 
-ColorKit extends SwiftUI's `Binding` type when the wrapped value is a ``ColorKit/CKColor``. These extensions provide convenient projections (read-write bridges) to other color types, such as SwiftUI `Color`, `CGColor`, `CIColor`, and platform-native colors (`UIColor`/`NSColor`).
+ColorKit extends `Binding` when the wrapped value is a ``ColorKit/CKColor``. These extensions bridge `CKColor` to other color types, including SwiftUI `Color`, `CGColor`, `CIColor`, and platform-native colors (`UIColor`/`NSColor`).
 
-These bridges are particularly useful when using `CKColor` as your source of truth while interacting with standard SwiftUI views like `ColorPicker` or low-level framework components.
+Use these bridges to maintain `CKColor` as the source of truth while interacting with standard SwiftUI views like `ColorPicker` or low-level framework components.
 
 ## Topics
 

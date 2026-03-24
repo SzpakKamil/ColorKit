@@ -15,15 +15,15 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-The global lookup table used for accessibility checks.
+Global lookup table for accessibility checks.
 
 ## Overview
 
-Modify this shared instance to provide custom accessibility requirements. This affects the results of ``CKColor/isAPCAAccessible(on:size:weight:)`` across your project.
+Modify this shared instance to set custom accessibility requirements. Affects ``CKColor/isAPCAAccessible(on:size:weight:)`` project-wide.
 
 ### Purpose
 
-`sharedThresholds` allows you to define the strictness of your application's accessibility standards. Whether you need to strictly follow WCAG 3.0 Silver levels or implement a custom design system with higher contrast requirements, this property ensures consistency across your entire UI.
+Define the strictness of application accessibility standards. `sharedThresholds` ensures consistency across the UI, whether following WCAG 3.0 Silver levels or implementing a custom design system.
 
 ### Example Usage
 

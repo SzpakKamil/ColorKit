@@ -25,9 +25,9 @@ Extensions to the Core Graphics color type.
 
 ## Overview
 
-Core Graphics `CGColor` is a low-level color representation used across Apple's frameworks for drawing, layers, and coordinate-space specific color definitions.
+Core Graphics `CGColor` represents low-level colors for drawing and layers.
 
-Bridging `CGColor` to ColorKit is essential for developers working with custom drawing code or `CALayer` hierarchies. By converting a low-level `CGColor` into a dynamic ``ColorKit/CKColor``, you gain access to high-level perceptual modifications, accessibility checks, and cross-gamut conversions while preserving the technical precision of the original color data.
+Bridge `CGColor` to ColorKit to integrate custom drawing or `CALayer` hierarchies. Converting `CGColor` to ``ColorKit/CKColor`` enables high-level perceptual modifications, accessibility checks, and cross-gamut conversions while preserving precision.
 
 ## Topics
 

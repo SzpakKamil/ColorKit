@@ -15,13 +15,13 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-The closure determining the required contrast based on font characteristics.
+Closure determining required contrast based on font characteristics.
 
 ## Overview
 
-This property stores the actual logic used to evaluate if a color pairing is accessible. When ``ColorKit/CKColor/isAPCAAccessible(on:size:weight:)`` is called, it executes this closure to find the target `Lc` value for the given font size and weight.
+Stores the logic for evaluating color pairing accessibility. ``ColorKit/CKColor/isAPCAAccessible(on:size:weight:)`` executes this closure to find the target `Lc` value for the given font size and weight.
 
 ### Details
 
 - **Type:** ``ColorKit/CKAPCA/Thresholds/Lookup``
-- **Default:** Initialized with the ``ColorKit/CKAPCA/Thresholds/silver`` logic by default.
+- **Default:** ``ColorKit/CKAPCA/Thresholds/silver`` logic.
