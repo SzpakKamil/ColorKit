@@ -1,6 +1,6 @@
 # ``ColorKit``
 
-Advanced Color Manipulation, Conversion, and Management for Swift.
+Advanced Color Manipulation & Management
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -23,11 +23,9 @@ Advanced Color Manipulation, Conversion, and Management for Swift.
 
 ## Overview
 
-The `ColorKit` package provides a powerful, cross-platform Swift API for advanced color manipulation, conversion, and accessibility management. Supporting iOS, macOS, watchOS, tvOS, and visionOS, it offers developers a unified toolset for handling wide-gamut color spaces (like Display P3 and Adobe RGB), perceptual gamut mapping using OKLAB, and Photoshop-style blending modes. With built-in support for WCAG and APCA contrast checks, `ColorKit` ensures your application's UI is both vibrant and accessible.
+`ColorKit` provides a unified Swift API for advanced color manipulation, conversion, and accessibility. It supports wide-gamut color spaces (Display P3, Adobe RGB), perceptual gamut mapping (OKLAB), and standard blending modes. Includes WCAG and APCA contrast validation. Use it for dynamic theming, `Codable` color persistence, and complex transformations.
 
-Whether you're creating dynamic themes with Dark Mode support, persisting user color choices via `Codable`, or performing complex color space transformations, `ColorKit` simplifies the process with an intuitive, SwiftUI-friendly API.
-
-@Image(source: "ColorKit-Banner", alt: "")
+@Image(source: "ColorKit-Banner", alt: "ColorKit banner showing color spectrums and blending examples.")
 
 ## Getting Started
 
@@ -66,7 +64,6 @@ Whether you're creating dynamic themes with Dark Mode support, persisting user c
 ### Accessibility
 - ``ColorKit/CKAPCA``
 - ``ColorKit/CKColor/FontWeight``
-
 
 ### Blending and Manipulation
 - ``ColorKit/CKBlendMode``

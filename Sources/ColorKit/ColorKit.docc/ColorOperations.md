@@ -18,34 +18,34 @@
     @AutomaticSeeAlso(disabled)
 }
 
-Learn about the advanced color operations available in the `ColorKit` package, including conversion, blending, and accessibility checks.
+Perform advanced color operations, including conversion, blending, and accessibility checks.
 
 ## Overview
 
-`ColorKit` provides a comprehensive suite of operations for manipulating and analyzing colors. These operations are primarily exposed as methods and properties on the `CKColor` struct, ensuring a consistent and discoverable API.
+`ColorKit` includes a suite of operations for manipulating and analyzing colors. `CKColor` exposes these as methods and properties.
 
 ## Operations
 
 ### Conversions & Gamut Mapping
 
 - ``ColorKit/CKColor/converted(to:iterations:)``  
-  Converts a color to a target color space with optional perceptual gamut mapping.  
+  Converts to a target color space with optional perceptual gamut mapping.  
   **Available:** all platforms
 
 - ``ColorKit/CKColor/colorSpace``  
-  The current color space of the color.  
+  The current color space.  
   **Available:** all platforms
 
 ### Blending
 
 - ``ColorKit/CKColor/blended(with:mode:opacity:)``  
-  Blends the current color with another using a specified ``CKBlendMode``.  
+  Blends with another color using a ``CKBlendMode``.  
   **Available:** all platforms
 
 ### Accessibility & Contrast
 
 - ``ColorKit/CKColor/contrastRatio(with:)``  
-  Calculates the WCAG 2.1 contrast ratio between two colors.  
+  Calculates the WCAG 2.1 contrast ratio.  
   **Available:** all platforms
 
 - ``ColorKit/CKColor/apcaContrast(on:)``  
@@ -53,17 +53,17 @@ Learn about the advanced color operations available in the `ColorKit` package, i
   **Available:** all platforms
 
 - ``ColorKit/CKColor/isAPCAAccessible(on:size:weight:)``  
-  Determines if a color combination meets APCA readability thresholds for a given font.  
+  Determines if a combination meets APCA readability thresholds for a font.  
   **Available:** all platforms
 
 ### Luminance & Lightness
 
 - ``ColorKit/CKColor/linearLuminance``  
-  Returns the linear luminance (Y) using Rec. 709 coefficients, HDR-compatible.  
+  Returns the linear luminance (Y) using Rec. 709 coefficients (HDR-compatible).  
   **Available:** all platforms
 
 - ``ColorKit/CKColor/wcagLuminance``  
-  Returns the relative luminance clamped to the SDR range (0-1).  
+  Returns relative luminance clamped to SDR (0-1).  
   **Available:** all platforms
 
 ## Example
@@ -88,4 +88,4 @@ print("Contrast is sufficient: \(isReadable)")
 
 ## Next Steps
 
-- Explore the main API reference in <doc:ColorKit>.
+- <doc:ColorKit>

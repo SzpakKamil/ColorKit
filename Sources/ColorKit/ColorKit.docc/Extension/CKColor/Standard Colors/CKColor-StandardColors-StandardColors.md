@@ -28,7 +28,7 @@ A collection of all predefined standard colors.
 
 ### Localization
 
-Each color name within the collection is translated into every native iOS language and is available through the ``CKColor/localizedDescription`` property.
+Each color name within the collection is translated into every native iOS language and Access via ``CKColor/localizedDescription`` property.
 
 ### Details
 

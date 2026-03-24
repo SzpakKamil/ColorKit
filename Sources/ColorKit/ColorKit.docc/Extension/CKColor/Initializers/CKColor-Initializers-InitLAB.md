@@ -24,7 +24,7 @@ Creates a `CKColor` from CIE LAB components.
 
 ## Overview
 
-This initializer uses the CIE L*a*b* (LAB) color space, which is designed to be perceptually uniform. This means that a change of a certain amount in a color value should produce a change of about the same visual importance.
+This initializer uses the CIE L*a*b* (LAB) color space, which is perceptually uniform. This means that a change of a certain amount in a color value should produce a change of about the same visual importance.
 
 By initializing colors in LAB space, you can perform advanced color science operations with predictable visual results. ColorKit accurately maps the Lightness (L) and the color-opponent dimensions (a and b) into its internal format, providing a robust foundation for applications that require high perceptual accuracy.
 

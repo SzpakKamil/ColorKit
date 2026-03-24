@@ -6,7 +6,7 @@
 ![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
 
-Advanced color manipulation for Swift. `ColorKit` unifies color space conversions, perceptual gamut mapping, blending modes, and accessibility checks. Bridges platform-native types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
+Advanced color manipulation for Swift. `ColorKit` unifies conversions, perceptual gamut mapping, blending, and accessibility checks. Bridges platform-native types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
 
 View the [Documentation](https://documentation.kamilszpak.com/documentation/colorkit).
 
@@ -22,27 +22,26 @@ View the [Documentation](https://documentation.kamilszpak.com/documentation/colo
 
 ## Features
 
-*   **Broad Color Space Support**: Convert between sRGB, Display P3, Adobe RGB, ROMM RGB (ProPhoto), CIE L*a*b*, OKLAB, LCH, and CMYK.
-*   **Dynamic & Semantic Colors**: Define light, dark, and high-contrast variants in a single `CKColor` object.
-*   **Perceptual Gamut Mapping**: Preserve hue and lightness when converting wide-gamut (P3) to smaller spaces (sRGB) via OKLAB.
-*   **Advanced Blending Modes**: Apply blending modes like Multiply, Overlay, Screen, and Soft Light with correct alpha compositing.
-*   **Modern Accessibility**: Check WCAG 2.1 contrast ratios and APCA (WCAG 3.0) compliance.
-*   **HDR & Wide-Gamut Ready**: Handle extended dynamic range (EDR) values and maintain wide-gamut precision.
-*   **Codable Conformance**: Persist colors in SwiftData, AppStorage, or UserDefaults.
+*   **Broad Support**: sRGB, Display P3, Adobe RGB, ROMM RGB, CIE L*a*b*, OKLAB, LCH, CMYK.
+*   **Dynamic & Semantic**: Light, dark, and high-contrast variants in one `CKColor`.
+*   **Perceptual Gamut Mapping**: Preserves hue/lightness when converting wide-gamut (P3) to smaller spaces via OKLAB.
+*   **Blending Modes**: Multiply, Overlay, Screen, Soft Light with correct alpha compositing.
+*   **Accessibility**: WCAG 2.1 contrast ratios and APCA (WCAG 3.0) compliance.
+*   **HDR Ready**: Handles extended dynamic range (EDR).
+*   **Codable**: Persists in SwiftData, AppStorage, or UserDefaults.
 
 ## Usage
 
-### Creating and Using Colors
-Use `CKColor` to adapt to system traits and bridge native types.
+### Create and Use Colors
 
 ```swift
 import ColorKit
 import SwiftUI
 
-// Initialize from a Hex String
+// Hex String
 let brandColor = CKColor(hexString: "#FF5733")
 
-// Define a semantic color that adapts to system appearance
+// Adaptive Semantic Color
 let background = CKColor(
     hexString: "#FFFFFF",        // Light Mode
     hexStringDark: "#121212"     // Dark Mode
@@ -56,32 +55,30 @@ struct ContentView: View {
 ```
 
 ### Color Space Conversion
-Manipulate colors in perceptually uniform or design-oriented coordinate systems.
 
 ```swift
-// Convert a Display P3 red to sRGB
+// P3 to sRGB
 let p3Color = CKColor(red: 1.0, green: 0.0, blue: 0.0, colorSpace: .displayP3)
 let sRGBColor = p3Color.converted(to: .sRGB)
 
-// Create a color in the OKLAB space
+// OKLAB
 let oklabColor = CKColor(okL: 0.7, okA: 0.1, okB: -0.1, colorSpace: .okLab)
 ```
 
 ### Accessibility Checks
-Validate accessibility with the Advanced Perceptual Contrast Algorithm (APCA).
 
 ```swift
 let text = CKColor(hexString: "#333333")
 let bg = CKColor(hexString: "#FFFFFF")
 
-// Check contrast based on WCAG 3.0 standards for 16pt text
+// APCA check for 16pt text
 let isReadable = text.isAPCAAccessible(on: bg, size: 16, weight: .regular)
 ```
 
 ## Installation
 
 ### Swift Package Manager
-Add `ColorKit` as a dependency in your `Package.swift` file or via Xcode.
+Add `ColorKit` in `Package.swift` or via Xcode.
 
 ```swift
 dependencies: [
@@ -90,7 +87,7 @@ dependencies: [
 ```
 
 ### Agent Skill
-Install the Agent Skill for AI-assisted workflows.
+Install the Agent Skill for AI assistance.
 ```bash
 npx skills add https://github.com/SzpakKamil/AgentSkills --skill ColorKit
 ```
@@ -100,4 +97,4 @@ npx skills add https://github.com/SzpakKamil/AgentSkills --skill ColorKit
 * **Tools**: Swift 5.9+, Xcode 15.0+
 
 ## License
-`ColorKit` is released under the MIT license.
+MIT
