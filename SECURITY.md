@@ -40,8 +40,6 @@ Propose features via GitHub Issues ("enhancement" label). Describe the functiona
 
 ## Commitment
 
-I commit to:
-
 - Addressing security concerns promptly.
 - Fixing bugs timely.
 - Considering all proposals.

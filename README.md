@@ -6,7 +6,7 @@
 ![Banner](./Resources/ColorKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/ColorKit-Banner~dark.webp#gh-dark-mode-only)
 
-Advanced color manipulation for Swift. `ColorKit` unifies conversions, perceptual gamut mapping, blending, and accessibility checks. Bridges platform-native types (`UIColor`, `NSColor`) and SwiftUI's `Color`.
+`ColorKit` handles color conversions, perceptual gamut mapping, blending, and accessibility checks for Swift. Bridges `UIColor`, `NSColor`, and SwiftUI's `Color`.
 
 View the [Documentation](https://documentation.kamilszpak.com/documentation/colorkit).
 
